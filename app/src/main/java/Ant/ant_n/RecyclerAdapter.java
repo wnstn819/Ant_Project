@@ -45,9 +45,9 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                 public void onClick(View v) {
                  Log.d("Recyclerview", "position = " + getAdapterPosition());
                  int pos = getAdapterPosition();
-                 Intent intent = new Intent(,Ant_Page.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                 //Intent intent = new Intent(,Ant_Page.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 
-                 intent.putExtra("TEXT",itemList.get(pos));
+                 //intent.putExtra("TEXT",itemList.get(pos));
                 }
             });
 
