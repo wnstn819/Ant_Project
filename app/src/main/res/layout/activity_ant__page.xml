@@ -4,12 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".Ant_Page">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:textStyle="bold"
+        android:id="@+id/hi"
+        android:text="test"
+        android:textSize="100sp"
         />
 
 
