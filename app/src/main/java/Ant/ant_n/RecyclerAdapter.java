@@ -1,8 +1,5 @@
 package Ant.ant_n;
 
-
-import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -17,7 +14,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
-    private Context mContext;
     private List<String> itemList=new ArrayList<>();
     private List<String> titleList=new ArrayList<>();
 
@@ -47,7 +43,8 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                  Log.d("Recyclerview", "position = " + getAdapterPosition());
                  int pos = getAdapterPosition();
                  Intent intent = new Intent(v.getContext(),Ant_Page.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                 intent.putExtra("TEXT",itemList.get(pos));
+                 intent.putExtra("itemList",itemList.get(pos));
+                 intent.putExtra("titleList",titleList.get(pos));
                  v.getContext().startActivity(intent);
                 }
             });

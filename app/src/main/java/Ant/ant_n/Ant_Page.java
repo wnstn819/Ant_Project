@@ -9,16 +9,21 @@ import android.widget.TextView;
 
 public class Ant_Page extends AppCompatActivity {
 
+    private TextView itemText;
+    private TextView titleText;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ant__page);
-        TextView tv;
-        tv = (TextView)findViewById(R.id.hi);
+        itemText = (TextView)findViewById(R.id.itemList);
+        titleText = (TextView)findViewById(R.id.titleList);
 
 
         Intent intent =  getIntent();
-        String text = intent.getStringExtra("TEXT"); // recycler에서 pos값 가져와서 여기서 받아줌
-        tv.setText(text);   // textview에 출력
+        String itemList = intent.getStringExtra("itemList"); // recycler에서 itemList의 값 가져와서 여기서 받아줌
+        String titleList = intent.getStringExtra("titleList"); // recycler에서 titleList의 값 가져와서 여기서 받아줌
+        titleText.setText(titleList);   // textview에 출력
+        itemText.setText(itemList);
     }
 }
