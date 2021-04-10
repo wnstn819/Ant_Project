@@ -18,7 +18,7 @@ public class Ant_Page extends AppCompatActivity {
 
 
         Intent intent =  getIntent();
-        String text = intent.getStringExtra("TEXT");
-        tv.setText(text);
+        String text = intent.getStringExtra("TEXT"); // recycler에서 pos값 가져와서 여기서 받아줌
+        tv.setText(text);   // textview에 출력
     }
 }

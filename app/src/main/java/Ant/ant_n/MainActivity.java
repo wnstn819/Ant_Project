@@ -1,24 +1,35 @@
 package Ant.ant_n;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
+
 
 
 public class MainActivity extends AppCompatActivity {
+
+    Button test_btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        test_btn = (Button)findViewById(R.id.test_btn);
 
-        RecyclerView recyclerView=findViewById(R.id.recyclerView);
+        test_btn.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void  onClick(View view) {
+                Toast.makeText(getApplication(),"클릭",Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(getApplicationContext(),board_page.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
 
-        recyclerView.setHasFixedSize(true); // recyclerview 안 아이템들의 크기를 가변적으로 할지 일정한 고정값으로 할지 , false하면 성능 저하 발생
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setAdapter(new RecyclerAdapter());
+
+            }
+        });
 
     }
 }
